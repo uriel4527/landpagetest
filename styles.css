@@ -1,0 +1,247 @@
+/* Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background: #000000;
+  color: #ff007f;
+  overflow-x: hidden;
+}
+
+/* Slideshow */
+.slideshow {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh; /* Ocupa toda a altura da tela */
+}
+
+.slideshow .slides {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%; /* Garante que o contêiner ocupe toda a largura */
+  height: 100%; /* Ajusta para ocupar toda a altura */
+}
+
+.slideshow img {
+  width: 100%;  /* Ajusta a largura da imagem para 100% do contêiner */
+  height: 100%; /* Ajusta a altura para 100% do contêiner */
+  object-fit: contain; /* Assegura que a imagem seja exibida inteira */
+  display: block;
+  flex-shrink: 0; /* Evita que as imagens encolham */
+  transition: opacity 1s ease-in-out;
+}
+
+/* Navegação com bolinhas */
+.nav-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.nav-dots .dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #571b1b;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-dots .dot.active {
+  background-color: #ff0000;
+}
+
+/* Contador */
+.counter h2 {
+  top: -45.08px;
+  left: 0px;
+  position: relative;
+}
+
+.counter .time-boxes {
+  top: -50px;
+  position: relative;
+}
+
+#toggle-music {
+  margin-left: -87px !important;
+  margin-right: -50px;
+  padding-right: 0;
+  position: relative;
+  left: 11px;
+  padding-top: 0px;
+  padding-left: 3px;
+  padding-bottom: 34px;
+  height: 0px !important;
+  width: 128px;
+}
+
+/* Conteúdo principal */
+.content {
+  text-align: center;
+  padding: 20px;
+}
+
+.content h1 {
+  color: #ff0013;
+  font-size: 2.2rem;
+  font-family: 'Dancing Script', cursive; /* Fonte romântica */
+}
+
+/* Contador */
+.counter {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.counter h2 {
+  margin-bottom: 10px;
+}
+
+.time-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.time-boxes div {
+  text-align: center;
+  background: #333;
+  border-radius: 10px;
+  padding: 10px;
+  width: 70px;
+  flex: 1 1 calc(33.333% - 30px);
+  max-width: 100px;
+  min-width: 70px;
+  margin: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.time-boxes span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.time-boxes div p {
+  margin: 5px 0 0;
+  font-size: 0.8rem;
+  color: #bbb;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .slideshow {
+    height: 60vh; /* Reduz a altura em dispositivos menores */
+  }
+  .time-boxes div {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .time-boxes div {
+    flex: 1 1 calc(100% - 20px);
+  }
+}
+
+/* Player de Música */
+.music-player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #1e1e1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 20;
+}
+
+.music-player button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.music-player button img {
+  width: 75px;  /* Ajuste o tamanho conforme necessário */
+  height: 40px;
+  transition: opacity 0.3s ease;
+}
+
+.music-player button img:hover {
+  opacity: 0.7;
+}
+
+/* Efeito de corações */
+#hearts {
+  position: fixed; /* Garante que a div ocupe toda a tela */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Usa toda a altura da tela */
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10; /* Garante que a camada dos corações fique acima de outros conteúdos */
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  transform: rotate(45deg);
+  animation: fall 10s linear infinite, sway 3s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10%) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes sway {
+  0%, 100% {
+    transform: translateX(0) rotate(45deg);
+  }
+  50% {
+    transform: translateX(15px) rotate(45deg);
+  }
+}

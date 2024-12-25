@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uriel e Romana</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="slideshow">
+    <div class="slides">
+      <img src="imagem1.jpg" alt="Foto 1">
+      <img src="imagem2.jpeg" alt="Foto 2">
+      <img src="imagem3.jpeg" alt="Foto 3">
+      <img src="imagem4.jpeg" alt="Foto 4">
+      <img src="imagem5.jpeg" alt="Foto 5">
+      <img src="imagem6.jpeg" alt="Foto 6">
+    </div>
+    <div class="nav-dots">
+      <span class="dot" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+      <span class="dot" data-index="3"></span>
+      <span class="dot" data-index="4"></span>
+      <span class="dot" data-index="5"></span>
+    </div>
+  </div>
+
+  <!-- Texto Principal -->
+  <div class="content">
+    <h1>Zé e Kelly</h1>
+    <p>
+      Oque era pra ser uma carona, hj estamos aí se chamando de “AMOR“ meu estresse e minha calmaria…
+A nossa cumplicidade é algo único. Vc é meu lugar seguro, com quem me sinto livre para compartilhar segredos e planos. 
+Vc me apresentou uma nova forma de amar, com respeito, intimidade e uma conexão sem igual.
+Amo você!
+    </p>
+  </div>
+
+  <!-- Contador -->
+  <div class="counter">
+    <h2>Compartilhando momentos há</h2>
+    <div class="time-boxes">
+      <div>
+        <span id="anos">00</span>
+        <p>anos</p>
+      </div>
+      <div>
+        <span id="meses">00</span>
+        <p>meses</p>
+      </div>
+      <div>
+        <span id="dias">00</span>
+        <p>dias</p>
+      </div>
+      <div>
+        <span id="horas">00</span>
+        <p>horas</p>
+      </div>
+      <div>
+        <span id="minutos">00</span>
+        <p>minutos</p>
+      </div>
+      <div>
+        <span id="segundos">00</span>
+        <p>segundos</p>
+      </div>
+    </div>
+  </div>
+
+ <!-- Player de Música -->
+<div class="music-player">
+  <audio id="background-music" autoplay loop>
+    <source src="musica.mp3" type="audio/mp3">
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+  <button id="toggle-music">
+    <img src="play-icon.png" alt="Play" id="music-icon">
+  </button>
+</div>
+
+
+  <!-- Efeito de corações -->
+  <div id="hearts"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
